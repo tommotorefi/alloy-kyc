@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.alloy.co/evaluations
+    body:
+      encoding: UTF-8
+      string: address_city=Washington&address_country_code=US&address_line_1=1717+E+Test+St&address_postal_code=20005&address_state=DC&birth_date=1985-01-01&document_ssn=123456789&name_first=John&name_last=Doe&phone_number=8005551212
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Authorization:
+      - Bearer zUUYAdWTraD7pUlvjvh8yVkIB9Ich8Or7SU5Cjct
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 19 Jan 2017 22:14:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache, no-store
+      Alloy-Sandbox:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: '{
+  "evaluation_token": "S-eJ38yUNDqcMxKwwdxbya",
+  "error": null,
+  "timestamp": 1475258667031,
+  "entity_token": "P-Hp6QxEGwNg6sgYNuXdqF",
+  "application_token": "dpDD6z4olOSI7N4fMCsAlKjFa7reBYhu",
+  "application_version_id": 11,
+  "required": [
+    {
+      "key": "answers",
+      "type": "object",
+      "description": "Object containing answers to out of wallet question prompts.",
+      "template": {
+        "answers": [
+          {
+            "question_id": 1,
+            "answer_id": 0
+          },
+          {
+            "question_id": 2,
+            "answer_id": 0
+          },
+          {
+            "question_id": 3,
+            "answer_id": 0
+          },
+          {
+            "question_id": 4,
+            "answer_id": 0
+          },
+          {
+            "question_id": 5,
+            "answer_id": 0
+          }
+        ]
+      }
+    }
+  ],
+  "optional": [],
+  "prompts": {
+    "answers": {
+      "questions": [
+        {
+          "id": 1,
+          "question": "What state was your SSN issued in?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "Arkansas"
+            },
+            {
+              "id": 2,
+              "answer": "Alabama"
+            },
+            {
+              "id": 3,
+              "answer": "West Virginia"
+            },
+            {
+              "id": 4,
+              "answer": "Virginia"
+            },
+            {
+              "id": 5,
+              "answer": "None Of The Above"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}'
+    http_version:
+  recorded_at: Thu, 19 Jan 2017 22:14:36 GMT
+recorded_with: VCR 3.0.3

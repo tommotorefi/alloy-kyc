@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.alloy.co/oauth/bearer
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Authorization:
+      - Basic ZHBERDZ6NG9sT1NJN040Zk1Dc0FsS2pGYTdyZUJZaHU6b0ptM25pUVgxUGR5NHo2NzVrZWZFSUtCZ0ZuOXRRNDU=
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 19 Jan 2017 23:27:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-cache, no-store
+      Alloy-Sandbox:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"yiDsQ3hx4GJLa65fbrnRlcL3f0T8QWUDpd3xIqQN","token_type":"bearer","expires_in":3600}'
+    http_version: 
+  recorded_at: Thu, 19 Jan 2017 23:27:49 GMT
+recorded_with: VCR 3.0.3

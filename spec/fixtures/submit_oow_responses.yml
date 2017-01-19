@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://sandbox.alloy.co/evaluations/S-ds1uAPbr4AK6x9ojkcda
+    body:
+      encoding: UTF-8
+      string: answers%5B%5D%5Banswer_id%5D=1&answers%5B%5D%5Bquestion_id%5D=1&answers%5B%5D%5Banswer_id%5D=5&answers%5B%5D%5Bquestion_id%5D=2&answers%5B%5D%5Banswer_id%5D=2&answers%5B%5D%5Bquestion_id%5D=3&answers%5B%5D%5Banswer_id%5D=1&answers%5B%5D%5Bquestion_id%5D=4&answers%5B%5D%5Banswer_id%5D=5&answers%5B%5D%5Bquestion_id%5D=5&name_first=Charles&name_last=Hearn
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Authorization:
+      - Bearer yiDsQ3hx4GJLa65fbrnRlcL3f0T8QWUDpd3xIqQN
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 19 Jan 2017 23:27:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status_code":409,"error":{"minor_code":4091,"type":"Evaluation Already
+        Resolved","message":"Unable to supply additional fields to a resolved evaluation.
+        Consider forking request instead?","details":{},"error_token":"8fed2df8-7607-4666-ac3a-3e30bc9cc5c9"},"timestamp":1484868470266,"evaluation_token":"S-ds1uAPbr4AK6x9ojkcda","entity_token":null,"application_token":"dpDD6z4olOSI7N4fMCsAlKjFa7reBYhu","application_version_id":11}'
+    http_version: 
+  recorded_at: Thu, 19 Jan 2017 23:27:50 GMT
+recorded_with: VCR 3.0.3

@@ -22,7 +22,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Configure the gem using your issued Alloy credentials in an initializer file. For example, in config/initializers/alloy-kyc.rb:
+
+```ruby
+Alloy::KYC.configure do |config|
+  config.application_token = ENV['ALLOY_APPLICATION_TOKEN']
+  config.application_secret = ENV['ALLOY_APPLICATION_SECRET']
+end
+```
 
 ## Development
 
@@ -38,4 +45,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
