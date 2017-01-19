@@ -31,15 +31,38 @@ Alloy::KYC.configure do |config|
 end
 ```
 
-## Development
+Create a new evaluation:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+Alloy::KYC::Evaluation.create({
+    phone_number: "18042562188",
+    name_first: "Thomas",
+    name_last: "Nicholas",
+    email_address: "tommy@alloy.co",
+    birth_date: "1985-01-23",
+    address_line_1: "1717 E Test St",
+    address_city: "Richmond",
+    address_state: "VA",
+    document_ssn: "123456789",
+    address_postal_code: "23220",
+    address_country_code: "US",
+    social_twitter: "tommyrva"
+  })
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+If evaluation requires further information around out-of-wallet questions:
+
+```ruby
+evaluation = Alloy::KYC::Evaluation.create({phone_number: "18042562188", name_first: "Thomas",...})
+if evaluation.requires_oow?
+  # collect answers and either match locally or resubmit
+  updated_evaluation = evaluation.submit_oow_responses(responses)
+end
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/alloy-kyc.
+Bug reports and pull requests are welcome on GitHub at https://github.com/qedinvestors/alloy-kyc.
 
 
 ## License
