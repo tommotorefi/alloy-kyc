@@ -54,6 +54,27 @@ if evaluation.requires_oow?
 end
 ```
 
+## Testing
+
+To prevent this gem from making API calls when your tests are running, use mock mode:
+
+```ruby
+Alloy::KYC.mock_mode!
+```
+
+When in mock mode methods will return "successful" results; i.e., a call to `Alloy::KYC::Evaluation.create` will return an `Evaluation` that doesn't require an out of wallet followup. To simulate a failure, call `Alloy::KYC::Evaluation.create` with a `document_ssn` of `111223333`:
+
+```ruby
+Alloy::KYC::Evaluation.create(document_ssn: "111223333", ...) # any other parameters are ignored
+```
+
+Similarly, you can simulate an out-of-wallet response that requires more responses by passing that same `document_ssn` to `submit_oow_responses`:
+
+```ruby
+# given an existing Evaluation e:
+e.submit_oow_responses({document_ssn: "111223333", ...}) # any other parameters are ignored
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/qedinvestors/alloy-kyc.

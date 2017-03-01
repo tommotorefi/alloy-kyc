@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Alloy::KYC::Evaluation do
 
+  before(:each) { Alloy::KYC.configure }
+
   describe ".create" do
     it "should return a valid response" do
       evaluation = create_evaluation
